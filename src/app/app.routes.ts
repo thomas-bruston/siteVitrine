@@ -1,9 +1,5 @@
 import { Routes } from '@angular/router';
 
-// `loadComponent` charge chaque page à la demande (code splitting) plutôt que
-// de tout inclure dans le bundle initial : la personne qui arrive sur
-// l'Accueil ne télécharge pas le code de la page Projets tant qu'elle n'y
-// va pas.
 export const routes: Routes = [
   {
     path: '',
