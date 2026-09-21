@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HlmButton } from '@spartan-ng/helm/button';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { faBrandGithub, faBrandLinkedinIn } from '@ng-icons/font-awesome/brands';
 
-// Composant racine : il ne fait qu'accueillir le router-outlet pour le
-// moment. La logique et l'affichage réels vivent dans les pages sous
-// src/app/pages/.
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, HlmButton, NgIcon],
+  viewProviders: [provideIcons({ faBrandGithub, faBrandLinkedinIn })],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {}
+export class App {
+  protected readonly currentYear = new Date().getFullYear();
+}
