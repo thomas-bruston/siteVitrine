@@ -1,10 +1,16 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
+import { routes } from './app.routes';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      // Le header du composant App utilise routerLink : il faut fournir le
+      // router (avec les vraies routes) pour que RouterLink/RouterLinkActive
+      // puissent s'injecter ActivatedRoute.
+      providers: [provideRouter(routes)],
     }).compileComponents();
   });
 

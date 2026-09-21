@@ -1,8 +1,50 @@
 <!--
-  Racine de l'application.
-  Pour l'instant on se contente du <router-outlet> : c'est lui qui affichera
-  le composant correspondant à la route active (Accueil, Projets, etc.).
-  Le header/footer communs à toutes les pages seront ajoutés à l'étape
-  "layout de base".
+  Racine de l'application : header et footer sont communs à toutes les
+  pages, seul le contenu du <router-outlet> change en fonction de la route
+  active (voir app.routes.ts).
 -->
-<router-outlet />
+<div class="flex min-h-dvh flex-col">
+  <header class="border-b">
+    <nav class="mx-auto flex max-w-4xl items-center justify-between px-4 py-4">
+      <a routerLink="/" class="text-lg font-semibold">Thomas Bruston</a>
+
+      <ul class="flex gap-6 text-sm">
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="text-foreground font-medium"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-muted-foreground hover:text-foreground"
+          >
+            Accueil
+          </a>
+        </li>
+        <li>
+          <a routerLink="/projets" routerLinkActive="text-foreground font-medium" class="text-muted-foreground hover:text-foreground">
+            Projets
+          </a>
+        </li>
+        <li>
+          <a routerLink="/a-propos" routerLinkActive="text-foreground font-medium" class="text-muted-foreground hover:text-foreground">
+            À propos
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="text-foreground font-medium" class="text-muted-foreground hover:text-foreground">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="flex-1">
+    <router-outlet />
+  </main>
+
+  <footer class="border-t">
+    <div class="mx-auto max-w-4xl px-4 py-6 text-center text-sm text-muted-foreground">
+      © {{ currentYear }} Thomas Bruston
+    </div>
+  </footer>
+</div>
