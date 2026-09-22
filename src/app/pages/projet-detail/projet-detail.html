@@ -1,4 +1,75 @@
-<section class="mx-auto max-w-3xl px-4 py-16">
-  <h1 class="text-3xl font-semibold">Détail projet</h1>
-  <p class="mt-2 text-muted-foreground">Contenu à venir : problème, stack, défis, état actuel.</p>
-</section>
+@if (projet(); as p) {
+  <section class="mx-auto max-w-4xl px-6 py-12 md:px-10 lg:py-20">
+    <a routerLink="/projets" class="text-sm font-medium text-[#428EE0] hover:underline">
+      ← Retour aux projets
+    </a>
+
+    <div class="mt-4 flex flex-wrap items-center justify-between gap-4">
+      <h1 class="font-league-spartan text-3xl font-semibold">{{ p.titre }}</h1>
+      <span class="bg-muted text-muted-foreground rounded-full px-3 py-1 text-xs font-medium">
+        {{ p.statut }}
+      </span>
+    </div>
+
+    <img [src]="p.image" [alt]="p.titre" class="mt-6 w-full rounded-2xl shadow-lg" />
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      @for (tech of p.stack; track tech) {
+        <span class="rounded-full bg-[#428EE0]/10 px-2.5 py-1 text-xs font-medium text-[#428EE0]">
+          {{ tech }}
+        </span>
+      }
+    </div>
+
+    <div class="mt-10 flex flex-col gap-10">
+      <div>
+        <h2 class="font-league-spartan text-xl font-semibold">Le contexte</h2>
+        <p class="text-muted-foreground mt-2">{{ p.contexte }}</p>
+      </div>
+
+      <div>
+        <h2 class="font-league-spartan text-xl font-semibold">Stack technique</h2>
+        <p class="text-muted-foreground mt-2">{{ p.stack.join(' · ') }}</p>
+      </div>
+
+      <div>
+        <h2 class="font-league-spartan text-xl font-semibold">Défis et choix techniques</h2>
+        <p class="text-muted-foreground mt-2">{{ p.defis }}</p>
+      </div>
+
+      <div>
+        <h2 class="font-league-spartan text-xl font-semibold">État actuel</h2>
+        <p class="text-muted-foreground mt-2">{{ p.etatActuel }}</p>
+      </div>
+
+      @if (p.galerie && p.galerie.length) {
+        <div>
+          <h2 class="font-league-spartan text-xl font-semibold">Captures d'écran</h2>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            @for (image of p.galerie; track image.src) {
+              <figure class="overflow-hidden rounded-2xl bg-white shadow-lg">
+                <a [href]="image.src" target="_blank" rel="noopener noreferrer">
+                  <img
+                    [src]="image.src"
+                    [alt]="image.alt"
+                    class="aspect-video w-full object-cover"
+                  />
+                </a>
+                <figcaption class="bg-[#428EE0] px-4 py-2 text-center text-sm text-white">
+                  {{ image.alt }}
+                </figcaption>
+              </figure>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+} @else {
+  <section class="mx-auto max-w-4xl px-6 py-20 text-center md:px-10">
+    <h1 class="font-league-spartan text-2xl font-semibold">Projet introuvable</h1>
+    <a routerLink="/projets" class="mt-4 inline-block text-sm font-medium text-[#428EE0] hover:underline">
+      ← Retour aux projets
+    </a>
+  </section>
+}
