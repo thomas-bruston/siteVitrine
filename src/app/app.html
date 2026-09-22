@@ -53,9 +53,9 @@
           Me contacter
         </a>
 
-        <hlm-sheet #sheet="hlmSheet" class="lg:hidden">
+        <hlm-popover #popover="brnPopover" align="end" [sideOffset]="8" class="lg:hidden">
           <button
-            hlmSheetTrigger
+            hlmPopoverTrigger
             hlmBtn
             variant="ghost"
             size="icon-lg"
@@ -64,56 +64,56 @@
           >
             <ng-icon name="lucideMenu" size="26" />
           </button>
-          <hlm-sheet-content *hlmSheetPortal="let ctx" side="right" class="w-72">
-            <hlm-sheet-header>
-              <h3 hlmSheetTitle>Navigation</h3>
-            </hlm-sheet-header>
-
-            <nav class="mt-6 flex flex-col gap-5 px-4 text-base">
+          <hlm-popover-content *hlmPopoverPortal="let ctx" class="w-56 p-2">
+            <nav class="flex flex-col gap-1">
               <a
                 routerLink="/"
-                routerLinkActive="text-foreground font-medium"
+                routerLinkActive="bg-[#428EE0] text-white"
                 [routerLinkActiveOptions]="{ exact: true }"
-                class="text-muted-foreground hover:text-[#428EE0]"
-                (click)="sheet.close()"
+                class="text-muted-foreground flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-[#428EE0] hover:text-white"
+                (click)="popover.close()"
               >
+                <ng-icon name="lucideHouse" size="18" />
                 Accueil
               </a>
               <a
                 routerLink="/projets"
-                routerLinkActive="text-foreground font-medium"
-                class="text-muted-foreground hover:text-[#428EE0]"
-                (click)="sheet.close()"
+                routerLinkActive="bg-[#428EE0] text-white"
+                class="text-muted-foreground flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-[#428EE0] hover:text-white"
+                (click)="popover.close()"
               >
+                <ng-icon name="lucideFolderKanban" size="18" />
                 Projets
               </a>
               <a
                 routerLink="/a-propos"
-                routerLinkActive="text-foreground font-medium"
-                class="text-muted-foreground hover:text-[#428EE0]"
-                (click)="sheet.close()"
+                routerLinkActive="bg-[#428EE0] text-white"
+                class="text-muted-foreground flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-[#428EE0] hover:text-white"
+                (click)="popover.close()"
               >
+                <ng-icon name="lucideUser" size="18" />
                 À propos
               </a>
               <a
                 routerLink="/contact"
-                routerLinkActive="text-foreground font-medium"
-                class="text-muted-foreground hover:text-[#428EE0]"
-                (click)="sheet.close()"
+                routerLinkActive="bg-[#428EE0] text-white"
+                class="text-muted-foreground flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-[#428EE0] hover:text-white"
+                (click)="popover.close()"
               >
+                <ng-icon name="lucideMail" size="18" />
                 Contact
               </a>
               <a
                 hlmBtn
                 routerLink="/contact"
-                class="mt-2 bg-[#428EE0] text-white hover:brightness-90"
-                (click)="sheet.close()"
+                class="mt-2 w-fit self-center bg-[#428EE0] text-white hover:brightness-90"
+                (click)="popover.close()"
               >
                 Me contacter
               </a>
             </nav>
-          </hlm-sheet-content>
-        </hlm-sheet>
+          </hlm-popover-content>
+        </hlm-popover>
       </div>
     </nav>
   </header>
