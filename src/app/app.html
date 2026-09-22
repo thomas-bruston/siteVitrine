@@ -1,9 +1,9 @@
 <div class="flex min-h-dvh flex-col">
   <header>
-    <nav class="grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-4 md:px-10">
-      <a routerLink="/" class="text-lg font-semibold">Thomas Bruston</a>
+    <nav class="grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-1.5 md:px-10 lg:py-4">
+      <a routerLink="/" class="text-muted-foreground text-md font-semibold">Thomas Bruston</a>
 
-      <ul class="flex gap-6 text-sm">
+      <ul class="hidden gap-6 text-sm lg:flex">
         <li>
           <a
             routerLink="/"
@@ -43,23 +43,87 @@
         </li>
       </ul>
 
-      <a
-        hlmBtn
-        size="sm"
-        routerLink="/contact"
-        class="justify-self-end bg-[#428EE0] text-white hover:brightness-90"
-      >
-        Me contacter
-      </a>
+      <div class="col-start-3 flex items-center justify-self-end gap-3">
+        <a
+          hlmBtn
+          size="sm"
+          routerLink="/contact"
+          class="hidden bg-[#428EE0] text-white hover:brightness-90 lg:inline-flex"
+        >
+          Me contacter
+        </a>
+
+        <hlm-sheet #sheet="hlmSheet" class="lg:hidden">
+          <button
+            hlmSheetTrigger
+            hlmBtn
+            variant="ghost"
+            size="icon-lg"
+            aria-label="Ouvrir le menu"
+            class="translate-x-2 bg-[#428EE0] text-white hover:brightness-90"
+          >
+            <ng-icon name="lucideMenu" size="26" />
+          </button>
+          <hlm-sheet-content *hlmSheetPortal="let ctx" side="right" class="w-72">
+            <hlm-sheet-header>
+              <h3 hlmSheetTitle>Navigation</h3>
+            </hlm-sheet-header>
+
+            <nav class="mt-6 flex flex-col gap-5 px-4 text-base">
+              <a
+                routerLink="/"
+                routerLinkActive="text-foreground font-medium"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="text-muted-foreground hover:text-[#428EE0]"
+                (click)="sheet.close()"
+              >
+                Accueil
+              </a>
+              <a
+                routerLink="/projets"
+                routerLinkActive="text-foreground font-medium"
+                class="text-muted-foreground hover:text-[#428EE0]"
+                (click)="sheet.close()"
+              >
+                Projets
+              </a>
+              <a
+                routerLink="/a-propos"
+                routerLinkActive="text-foreground font-medium"
+                class="text-muted-foreground hover:text-[#428EE0]"
+                (click)="sheet.close()"
+              >
+                À propos
+              </a>
+              <a
+                routerLink="/contact"
+                routerLinkActive="text-foreground font-medium"
+                class="text-muted-foreground hover:text-[#428EE0]"
+                (click)="sheet.close()"
+              >
+                Contact
+              </a>
+              <a
+                hlmBtn
+                routerLink="/contact"
+                class="mt-2 bg-[#428EE0] text-white hover:brightness-90"
+                (click)="sheet.close()"
+              >
+                Me contacter
+              </a>
+            </nav>
+          </hlm-sheet-content>
+        </hlm-sheet>
+      </div>
     </nav>
   </header>
 
-  <main class="flex-1">
+  <main class="flex flex-1 flex-col">
     <router-outlet />
   </main>
 
-  <footer>
-    <div class="flex items-center justify-between px-6 py-6 md:px-10">
+  <footer class="relative">
+    <div class="flex items-center justify-between px-6 py-3 md:px-10 lg:py-6">
       <div class="flex gap-3">
         <a
           href="https://www.linkedin.com/in/thomas-bruston-0401a7315/"
