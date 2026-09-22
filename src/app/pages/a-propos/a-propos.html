@@ -1,4 +1,85 @@
-<section class="mx-auto max-w-3xl px-4 py-16">
-  <h1 class="text-3xl font-semibold">À propos</h1>
-  <p class="mt-2 text-muted-foreground">Contenu à venir : parcours et atouts transférables.</p>
+<section class="mx-auto max-w-3xl px-6 py-12 md:px-10 lg:py-20">
+  <h1 class="font-league-spartan text-3xl font-semibold">À propos</h1>
+  <p class="font-league-spartan mt-2 text-xl font-medium text-[#428EE0]">
+    Du management à la technique : une reconversion construite, pas un virage à 180°
+  </p>
+
+  <div class="text-muted-foreground mt-8 flex flex-col gap-8">
+    <p>
+      Développeur frontend en reconversion, je ne pars pas d'une page blanche. Sept années
+      passées comme Team Manager chez DHL à Montpellier (2018-2025) m'ont appris à gérer des
+      équipes, à résoudre des problèmes sous contrainte de temps et à communiquer avec des
+      interlocuteurs très différents, des compétences qui se retrouvent directement dans le
+      travail de développeur : rigueur, sens des priorités, capacité à comprendre un besoin
+      métier avant de foncer dans le code.
+    </p>
+
+    <div>
+      <h2 class="font-league-spartan text-xl font-semibold text-[#428EE0]">
+        Une formation solide, une pratique concrète
+      </h2>
+      <p class="mt-2">
+        Formation DWWM (Développeur Web et Web Mobile) chez Studi entre octobre 2025 et juin
+        2026, complétée par un stage de développeur Frontend Angular chez TachyCard. Cette
+        double approche, théorie structurée et mise en pratique en conditions réelles, se
+        retrouve dans mes projets : PackMap, AppFirstV2 et Ju Coach Sportif couvrent à la fois
+        l'apprentissage technique pur et la livraison à un client final.
+      </p>
+      <p class="mt-4">
+        Je suis également certifié EBIOS Risk Manager (Club EBIOS). Une sensibilité à la
+        sécurité et à la gestion des risques que j'intègre naturellement dans mes choix
+        techniques (requêtes préparées, conformité RGPD, gestion des accès).
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-league-spartan text-xl font-semibold text-[#428EE0]">
+        Vingt ans de graphisme, un œil qui ne s'improvise pas
+      </h2>
+      <p class="mt-2">
+        En parallèle, je pratique le graphisme freelance depuis vingt ans : logos pour
+        entrepreneurs et artisans, pochettes d'albums et affiches d'événements dans le milieu
+        hip-hop. Je ne conçois pas un visuel ou une interface sans me demander ce que la
+        personne en face va réellement en faire. Aujourd'hui, je mets cette exigence au service
+        du développement front-end, avec l'envie d'apprendre vite et de livrer du code propre,
+        pas seulement fonctionnel. Cette activité, toujours active aujourd'hui, m'a donné un
+        vrai sens du détail visuel et de l'expérience utilisateur, un atout que peu de
+        développeurs juniors peuvent apporter.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="font-league-spartan text-xl font-semibold text-[#428EE0]">Aujourd'hui</h2>
+      <p class="mt-2">
+        Basé à Montpellier, je continue à me former et à construire des projets concrets pour
+        valider mes compétences en conditions réelles, avec l'objectif de rejoindre une
+        équipe.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-12">
+    <h2 class="font-league-spartan text-xl font-semibold text-[#428EE0]">Compétences techniques</h2>
+    <div class="mt-4 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+      @for (categorie of competences; track categorie.titre) {
+        <div>
+          <h3 class="text-sm font-semibold text-[#428EE0]">{{ categorie.titre }}</h3>
+          <div class="mt-2 flex flex-wrap gap-2">
+            @for (item of categorie.items; track item.label) {
+              <span
+                class="flex items-center gap-2 rounded-full bg-[#428EE0]/10 px-3.5 py-2 text-sm font-medium text-[#428EE0]"
+              >
+                @if (item.image) {
+                  <img [src]="item.image" [alt]="item.label" class="size-5 rounded-sm" />
+                } @else {
+                  <ng-icon [name]="item.icon!" [color]="item.color" size="18" />
+                }
+                {{ item.label }}
+              </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
 </section>
