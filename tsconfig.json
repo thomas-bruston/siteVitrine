@@ -14,7 +14,7 @@
     "paths": {
       "@spartan-ng/helm/button": ["./src/app/ui/button/src/index.ts"],
       "@spartan-ng/helm/utils": ["./src/app/ui/utils/src/index.ts"],
-      "@spartan-ng/helm/sheet": ["./src/app/ui/sheet/src/index.ts"]
+      "@spartan-ng/helm/popover": ["./src/app/ui/popover/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
