@@ -26,7 +26,11 @@ export const PROJETS: Projet[] = [
     statut: 'Bêta privée',
     etatActuel:
       'Bêta privée en cours de développement. Repo privé (accès sur demande.)',
-    defis: 'Contenu à compléter.',
+    defis: `Choix d'Angular 22 pour pratiquer les signal forms et recentrage du produit avec la suppression volontaire d'une fonctionnalité (posts de type "offre de trajet") pour clarifier le scope.
+
+Choix de spartan/ui pour bénéficier de composants accessibles et personnalisables sans dépendre d'une librairie UI figée, tout en gardant le contrôle du style via Tailwind.
+
+Conformité RGPD : consentement explicite (cases non pré-cochées), politique de suppression après inactivité.`,
     galerie: [
       { src: 'assets/mapPackmap.webp', alt: 'Carte interactive des activités' },
       { src: 'assets/postPackmap.webp', alt: "Création d'un post" },
