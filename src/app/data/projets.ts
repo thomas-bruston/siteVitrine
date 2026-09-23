@@ -45,12 +45,12 @@ Conformité RGPD : consentement explicite (cases non pré-cochées), politique d
   {
     id: 'appfirstv2',
     titre: 'AppFirstV2',
-    contexte: 'Premier projet Angular, réalisé coté back-end avec DummyJSON.',
+    contexte: 'Premier projet Angular, réalisé côté back-end avec DummyJSON.',
     image: 'assets/accueilFirstAppV2.webp',
     stack: ['Angular 22','DummyJSON'],
     statut: 'Démo',
     etatActuel: 'Démo disponible via les captures d\'écran ci-dessous.',
-    defis: 'Reconstruction de mémoire pour ancrer les fondamentaux Angular (Signals, smart/dumb components, formulaires réactifs, guards, intercepteurs), avec un bug exécution API identifié et documenté comme preuve de capacité de diagnostic.',
+    defis: 'Reconstruction de mémoire pour ancrer les fondamentaux Angular (Signals, smart/dumb components, formulaires réactifs, guards, intercepteurs), avec un bug d\'exécution API identifié et documenté comme preuve de capacité de diagnostic.',
     galerie: [
       { src: 'assets/produitFirstAppV2.webp', alt: 'Liste des produits' },
       { src: 'assets/detailProduitFirstAppV2.webp', alt: 'Détail produit' },
