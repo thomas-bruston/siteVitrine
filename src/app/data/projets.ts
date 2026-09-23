@@ -37,6 +37,9 @@ Conformité RGPD : consentement explicite (cases non pré-cochées), politique d
       { src: 'assets/chatPackmap.webp', alt: 'Messagerie entre utilisateurs' },
       { src: 'assets/profilePackmap.webp', alt: 'Profil utilisateur' },
       { src: 'assets/activityPackmap.webp', alt: 'Détail d\'une activité' },
+      { src: 'assets/mapPackmapMobile.webp', alt: 'Carte interactive (mobile)' },
+      { src: 'assets/profilPackmapMobile.webp', alt: 'Profil utilisateur (mobile)' },
+      { src: 'assets/settingPackmapMobile.webp', alt: 'Paramètres (mobile)' },
     ],
   },
   {
@@ -54,6 +57,9 @@ Conformité RGPD : consentement explicite (cases non pré-cochées), politique d
       { src: 'assets/nouveauProduitFirstAppV2.webp', alt: 'Création de produit' },
       { src: 'assets/modifProduitFirstAppV2.webp', alt: 'Modification de produit' },
       { src: 'assets/loginFirstAppV2.webp', alt: 'Connexion' },
+      { src: 'assets/produitFirstAppMobile.webp', alt: 'Liste des produits (mobile)' },
+      { src: 'assets/nouvProduitFirstAppMobile.webp', alt: 'Création de produit (mobile)' },
+      { src: 'assets/loginFirstAppMobile.webp', alt: 'Connexion (mobile)' },
     ],
   },
   {
@@ -70,6 +76,9 @@ Conformité RGPD : consentement explicite (cases non pré-cochées), politique d
       { src: 'assets/login Jucoach.webp', alt: 'Connexion' },
       { src: 'assets/questionnaireJucoach.png', alt: 'Questionnaire client' },
       { src: 'assets/gestionProgrammeAdminJucoach.png', alt: 'Gestion des programmes (admin)' },
+      { src: 'assets/accueilJucoachMobile.webp', alt: 'Accueil (mobile)' },
+      { src: 'assets/avisJucoachMobile.webp', alt: 'Avis clients (mobile)' },
+      { src: 'assets/programmeJucoachMobile.webp', alt: 'Programmes proposés (mobile)' },
     ],
   },
 ];
